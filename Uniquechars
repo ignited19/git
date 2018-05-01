@@ -1,0 +1,46 @@
+/*
+Created by:Ignited19
+Simple program to verify if inputed string contains unique characters, thank you
+Language: Java
+
+ */
+package uniquechars;
+
+import java.util.Scanner;
+
+public class Uniquechars {
+
+   static boolean unique(String s){
+       s.toCharArray();
+       boolean charCheck[] = new boolean[128];
+       
+       for (int i = 0; i < s.length(); i++) {
+           if(charCheck[s.charAt(i)]==true){
+               System.out.println("There are multiple "+ s.charAt(i)+"'s");
+               return false;
+           }else{
+               charCheck[s.charAt(i)]=true;
+           }
+       }
+       System.out.println("This string contains all unique strings");
+       
+       return true;
+   }
+    
+
+
+    //Driver method
+    public static void main(String[] args) {
+        
+        Scanner in = new Scanner(System.in);
+        
+        
+        System.out.println("Hello, would you please type a string to see if it "
+                + "it conatins all unique characters");
+        
+        String input =in.nextLine();
+        
+        unique(input);
+    }
+    
+}
